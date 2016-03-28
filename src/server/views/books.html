@@ -6,7 +6,14 @@
 {% block content %}
 
   <div class="container">
-
+    {% for book in books %}
+      <div><a href="books/{{ book.id }}">{{ book.title }}</a></div>
+      <div><img src="{{ book.cover_url}}"></div>
+      <a href="/edit/{{ book.id }}"><div class="btn btn-success">Edit</div></a>
+      <form method="post" action="/books/{{ book.id }}/delete">
+        <input type="submit" value="Delete" class="btn btn-danger">
+      </form>
+    {% endfor %}
   </div>
 
 {% endblock %}

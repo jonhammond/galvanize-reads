@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+
+{% block title %}{% endblock %}
+
+
+{% block content %}
+
+  <div class="container">
+    <form method="post" action="/newauth">
+      First Name
+      <br>
+      <br>
+      <input type="text" name="firstName" placeholder="First Name">
+      <br>
+      <br>
+      Last Name
+      <br>
+      <input type="text" name="lastName" placeholder="Last Name">
+      <br>
+      <br>
+      Bio
+      <br>
+      <textarea cols="30" rows="15" type="text" name="bio" placeholder="Author Bio"></textarea>
+      <br>
+      <br>
+      Image URL
+      <br>
+      <input type="text" name="portraitUrl" placeholder="Input URL Here">
+      <br>
+      <br>
+      <input type="submit" value="Add Author!">
+    </form>
+  </div>
+
+{% endblock %}

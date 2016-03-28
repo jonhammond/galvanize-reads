@@ -6,8 +6,18 @@
 {% block content %}
 
   <div class="container">
+    {% for author in authors %}
+      <div>
+        <div><img src="{{ author.portrait_url }}"></div>
+        <p>{{ author.last_name}}, {{ author.first_name}}</p>
 
+        <a href="/editauth/{{ author.id }}"><div class="btn btn-success">Edit</div></a>
+        <form method="post" action="/authors/{{ author.id }}/delete">
+          <input type="submit" value="Delete" class="btn btn-danger">
+        </form>
 
+      </div>
+    {% endfor %}
   </div>
 
 {% endblock %}

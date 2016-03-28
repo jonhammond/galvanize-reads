@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+
+{% block title %}{% endblock %}
+
+
+{% block content %}
+
+  <div class="container">
+      <div><a href="/books/{{ book[0].id }}">{{ book[0].title }}</a></div>
+      <div><img src="{{ book[0].cover_url}}"></div>
+      <div><p>{{ book[0].author1 }}, {{ book[0].author2 }}, {{ book[0].author3 }}</p></div>
+  </div>
+
+{% endblock %}

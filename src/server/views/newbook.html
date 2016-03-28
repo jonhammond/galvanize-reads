@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+
+{% block title %}{% endblock %}
+
+
+{% block content %}
+
+  <div class="container">
+    <form method="post" action="/new">
+      Title
+      <br>
+      <br>
+      <input type="text" name="title" placeholder="Title">
+      <br>
+      <br>
+      Genre
+      <br>
+      <input type="text" name="genre" placeholder="Genre">
+      <br>
+      <br>
+      Cover Image URL
+      <br>
+      <input type="text" name="coverUrl" placeholder="Cover Image URL">
+      <br>
+      <br>
+      Description
+      <br>
+      <textarea cols="30" rows="10" type="text" name="description" placeholder="Description"></textarea>
+      <br>
+      <br>
+      Authors
+      <br>
+      <textarea cols="30" rows="10" type="text" name="author1" placeholder="Author One"></textarea>
+      <br>
+      <br>
+      <input type="submit" value="Add it!">
+    </form>
+  </div>
+
+{% endblock %}

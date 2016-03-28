@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+
+{% block title %}{% endblock %}
+
+
+{% block content %}
+
+  <div class="container">
+    <form method="post" action="/edit/{{ book[0].id }}">
+      Title
+      <br>
+      <br>
+      <input type="text" name="title" value="{{ book[0].title }}">
+      <br>
+      <br>
+      Genre
+      <br>
+      <input type="text" name="genre" value="{{ book[0].genre }}">
+      <br>
+      <br>
+      Cover Image URL
+      <br>
+      <input type="text" name="coverUrl" value="{{ book[0].cover_url }}">
+      <br>
+      <br>
+      Description
+      <br>
+      <textarea cols="30" rows="10" type="text" name="description">{{ book[0].description }}</textarea>
+      <br>
+      <br>
+      Authors
+      <br>
+      <input type="text" name="author1" value="AuthorID(s): {{ book[0].author1 }}, {{ book[0].author2 }}, {{ book[0].author3 }}"></textarea>
+      <br>
+      <br>
+      <input type="submit" value="Submit Edits!" class="btn btn-primary">
+    </form>
+  </div>
+
+{% endblock %}
