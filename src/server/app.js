@@ -7,6 +7,9 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var swig = require('swig');
+var session = require('cookie-session');
+var passport = require('./db/lib/auth');
+var flash = require('connect-flash');
 var Promise = require('bluebird');
 
 

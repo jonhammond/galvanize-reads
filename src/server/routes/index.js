@@ -4,8 +4,14 @@ var pg = require('pg');
 var knex = require('knex');
 var queries = require('../queries')
 
-// Route to GET and display the index page
+// Route to GET the login page when the / route is hit
 router.get('/', function(req, res, next) {
+  res.render('login', { title: 'Login!' });
+});
+
+
+// Route to GET and display the index page when the /home endpoint is hit
+router.get('/home', function(req, res, next) {
   res.render('index', { title: 'Galvanize Reads' });
 });
 
@@ -27,15 +33,10 @@ router.get('/books', function(req, res, next) {
 
 // Route to GET A SINGLE BOOK and display when the /books/:id endpoint is hit
 router.get('/books/:id', function(req, res, next) {
-  // queries.doJoin(req.params.id)
-  // .then(function(stuff) {
-  //   console.log("stuff:",stuff);
-  //   res.render('singlebook', { title: 'Books', stuff: stuff});
-  // })
-  queries.getBook(req.params.id)
-  .then(function(book) {
-    console.log("book:",book);
-    res.render('singlebook', { title: 'Books', book: book });
+  queries.doJoin(req.params.id)
+  .then(function(bookInfo) {
+    console.log("bookInfo:", bookInfo);
+    res.render('singlebook', { title: 'Books', book: bookInfo});
   })
 });
 

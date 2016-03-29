@@ -8,8 +8,14 @@ function Authors() {
   return knex('authors');
 }
 
-function Join() {
-  return knex('authors').join('books', 'authors.id', 'books.id')
+// function Join() {
+//   return knex('authors').join('books', 'authors.id', 'books.id')
+// }
+
+function JoinAuthorsBooks() {
+  return knex('books').select()
+  .innerJoin('authors_books', 'books.id', 'authors_books.book_id')
+  .innerJoin('authors', 'authors.id', 'authors_books.author_id')
 }
 
 module.exports = {
@@ -29,8 +35,9 @@ module.exports = {
     // get ONE AUTHOR
     return Authors().select().where('id', id);
   },
-  doJoin: function(id) {
+  doJoin: function(bookId) {
     // join AUTHORS and BOOKS tables
-    return Join().select().where('authors.id', id);
-  }
+    // return Join().select().where('authors.id', id);
+    return JoinAuthorsBooks().where('book_id', bookId);
+  },
 };

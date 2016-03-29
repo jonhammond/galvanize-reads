@@ -7,11 +7,15 @@
 
   <div class="container">
     <div class="row">
-      <div><a href="/books/{{ book[0].id }}">{{ book[0].title }}</a></div>
+      <div><a href="/books/"></a></div>
       <div class="imgWrapper2">
-        <img src="{{ book[0].cover_url}}" class="indexImages">
+        <img src="{{ book[0].cover_url }}" class="indexImages">
       </div>
-      <div><p>{{ book[0].author1 }}, {{ book[0].author2 }}, {{ book[0].author3 }}</p></div>
+      <div><p>Authors:</p>
+      {% for author in book %}
+        <p>{{ author.first_name }} {{ author.last_name }}</p>
+      {% endfor %}
+      </div>
     </div>
   </div>
 
