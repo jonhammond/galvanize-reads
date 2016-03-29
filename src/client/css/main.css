@@ -17,16 +17,22 @@ a {
   margin-top: 3px;
 }
 
-#red {
-  background-color: red;
-  height:50vh;
-  border-radius:10px;
+.indexImages {
+  width: 100%;
+}
+
+.imgWrapper {
+  height: 200px;
+  width: 200px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.imgWrapper2 {
+  width: 150px;
   text-align: center;
 }
 
-#green {
-  background-color: green;
-  height:50vh;
-  border-radius:10px;
-  text-align: center;
+.navbar {
+  overflow-x: scroll;
 }

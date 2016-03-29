@@ -27,16 +27,16 @@ router.get('/books', function(req, res, next) {
 
 // Route to GET A SINGLE BOOK and display when the /books/:id endpoint is hit
 router.get('/books/:id', function(req, res, next) {
-  queries.doJoin(req.params.id)
-  .then(function(stuff) {
-    console.log("stuff:",stuff);
-    res.render('show', { title: 'Books', stuff: book});
-  })
-  // queries.getBook(req.params.id)
-  // .then(function(book) {
-  //   console.log("book:",book);
-  //   res.render('show', { title: 'Books', book: book });
+  // queries.doJoin(req.params.id)
+  // .then(function(stuff) {
+  //   console.log("stuff:",stuff);
+  //   res.render('singlebook', { title: 'Books', stuff: stuff});
   // })
+  queries.getBook(req.params.id)
+  .then(function(book) {
+    console.log("book:",book);
+    res.render('singlebook', { title: 'Books', book: book });
+  })
 });
 
 // Route to GET and display the ADD NEW BOOK page when the /new endpoint is hit
