@@ -6,7 +6,7 @@ var queries = require('../queries')
 
 // Route to GET the login page when the / route is hit
 router.get('/', function(req, res, next) {
-  res.render('login', { title: 'Login!' });
+  res.render('login', { title: 'Galvanize Reads' });
 });
 
 

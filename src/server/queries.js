@@ -8,10 +8,6 @@ function Authors() {
   return knex('authors');
 }
 
-// function Join() {
-//   return knex('authors').join('books', 'authors.id', 'books.id')
-// }
-
 function JoinAuthorsBooks() {
   return knex('books').select()
   .innerJoin('authors_books', 'books.id', 'authors_books.book_id')

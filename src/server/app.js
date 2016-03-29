@@ -15,6 +15,7 @@ var Promise = require('bluebird');
 
 // *** routes *** //
 var routes = require('./routes/index.js');
+var signup = require('./routes/signup.js')
 
 
 // *** express instance *** //
@@ -36,11 +37,19 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(session({
+  name: 'DDsession',
+  keys: ['process.env.key1', 'process.env.key2']
+}));
+app.use(flash());
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(express.static(path.join(__dirname, '../client')));
 
 
 // *** main routes *** //
 app.use('/', routes);
+app.use('/signup', signup);
 
 
 // catch 404 and forward to error handler

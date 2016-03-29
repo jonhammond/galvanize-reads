@@ -13,15 +13,20 @@
 
   <div class="container">
     <h1>{{ title }}</h1>
-    <form method="post" action="/login">
-      <input type="text" placeholder="Username" name="username" required>
+    <form method="post" action="/signup">
+      <input type="text" name="given_name" placeholder="Your First Name">
       <br><br>
-      <input type="password" placeholder="Password" name="password" required autofocus>
+      <input type="text" name="family_name" placeholder="Your Last Name">
       <br><br>
-      <input class="btn btn-primary" type="submit" value="Log In">
+      <input type="email" name="email" placeholder="Email Address">
+      <br><br>
+      <input type="text" placeholder="Choose Your Username" name="username" required>
+      <br><br>
+      <input type="password" placeholder="Choose Your Password" name="password" required autofocus>
+      <br><br>
+      <input class="btn btn-primary" type="submit" value="Sign Up!">
     </form>
     <br><br>
-    <p>Don't have an account? <a href="/signup">Sign Up!</a></p>
 
   </div>
 
