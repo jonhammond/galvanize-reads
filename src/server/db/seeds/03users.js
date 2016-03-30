@@ -11,13 +11,13 @@ exports.seed = function(knex, Promise) {
       username: 'test',
       admin: false,
       email: 'test@test.com',
-      password: 'test'}),
+      password: '$2a$10$tH0jQASs3fM8yDOBDki5N.eze6aMGUeT5voOxAre2euQMUvI75l7K'}),
     knex('users').insert({
       given_name: 'admin1',
       family_name: 'admin1',
       username: 'admin1',
       admin: true,
       email: 'admin1@admin1.com',
-      password: 'admin1'})
+      password: '$2a$10$tH0jQASs3fM8yDOBDki5N.eze6aMGUeT5voOxAre2euQMUvI75l7K'})
   );
 };

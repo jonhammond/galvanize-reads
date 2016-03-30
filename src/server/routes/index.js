@@ -4,11 +4,10 @@ var pg = require('pg');
 var knex = require('knex');
 var queries = require('../queries')
 
-// Route to GET the login page when the / route is hit
+// Route to GET and REDIRECT to the login page when the / route is hit
 router.get('/', function(req, res, next) {
-  res.render('login', { title: 'Galvanize Reads' });
+  res.redirect('/login');
 });
-
 
 // Route to GET and display the index page when the /home endpoint is hit
 router.get('/home', function(req, res, next) {
